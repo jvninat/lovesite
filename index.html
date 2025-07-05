@@ -4,7 +4,137 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jibi & Natnat – 20th Monthsary</title>
-  <style>/* (CSS remains unchanged) */</style>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom right, #ffebee, #fff3e0);
+      color: #333;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('https://cdn.pixabay.com/photo/2016/03/05/20/02/hearts-1238244_1280.png') repeat;
+      opacity: 0.05;
+      z-index: -1;
+      pointer-events: none;
+    }
+    header {
+      background-color: #000;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+    }
+    header h1 {
+      font-size: 3em;
+      margin: 0;
+    }
+    header p {
+      font-size: 1.2em;
+    }
+    .poster {
+      background: url('https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Red_sunflower.jpg/640px-Red_sunflower.jpg') center/cover;
+      color: white;
+      text-shadow: 2px 2px 4px #000;
+      padding: 100px 20px;
+      text-align: center;
+    }
+    .poster h2 {
+      font-size: 2.5em;
+    }
+    .timeline, .streak, .declaration, .gallery, .quiz {
+      padding: 40px 20px;
+      max-width: 800px;
+      margin: auto;
+    }
+    .timeline h3, .streak h3, .declaration h3, .gallery h3, .quiz h3 {
+      color: #c62828;
+    }
+    .gallery-images {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .gallery-images img {
+      width: 100%;
+      border-radius: 12px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    .love-note-button {
+      background-color: #e53935;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-size: 1em;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      animation: pulse 2s infinite;
+    }
+    .love-note-button:hover {
+      background-color: #c62828;
+      transform: scale(1.05);
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    .quote-line {
+      font-style: italic;
+      font-size: 1.1em;
+      margin-top: 10px;
+      color: #b71c1c;
+    }
+    footer {
+      background-color: #000;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .butterfly {
+      font-size: 2em;
+      color: red;
+      animation: flutter 3s infinite ease-in-out;
+      display: inline-block;
+    }
+    .audio-player {
+      text-align: center;
+      margin: 20px auto;
+    }
+    .audio-player audio {
+      display: none;
+    }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c2185b;
+    }
+    @keyframes flutter {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+</style>
   <script>
     function playLoveSong() {
       const audio = document.getElementById('loveAudio');
@@ -74,3 +204,34 @@
     <h3>📸 Gallery of Duduy Memories</h3>
     <p>A little collection of our love in frames – from sweet selfies to your crochet masterpieces and our favorite illustrations 💛</p>
     <div class="gallery-images">
+      <img src="Pahinga.png" alt="My Pahinga">
+      <img src="20th.png" alt="20th">
+      <img src="fath.jpg" alt="fath">
+      <img src="sleep.jpg" alt="sleep">
+      <img src="lasheng.jpg" alt="di ako lasheng">
+      <img src="front.jpg" alt="front not side">
+    </div>
+  </section>
+
+  <section class="quiz">
+    <h3>💞 “How Well Do You Know Jibi?” Quiz</h3>
+    <p>Answer all correctly and unlock a spicy dare!</p>
+    <label>1. What’s my favorite body part of Natnat?</label>
+    <input id="q1" type="text" placeholder="Your answer here...">
+
+    <label>2. What did I say when you sent your first boobpic?</label>
+    <input id="q2" type="text" placeholder="Your answer here...">
+
+    <label>3. What color underwear do I imagine on you?</label>
+    <input id="q3" type="text" placeholder="Your answer here...">
+
+    <button onclick="checkQuiz()">Submit</button>
+    <div id="quiz-result"></div>
+  </section>
+
+  <footer>
+    <div class="butterfly">🦋</div>
+    <p>Forever yours, Natnat. – Jibi</p>
+  </footer>
+</body>
+</html>
