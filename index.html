@@ -141,7 +141,7 @@
       audio.play();
     }
     function checkQuiz() {
-      const answers = ['boobs', 'hotdamn', 'red'];
+      const answers = ['boobs', 'ganda', 'black'];
       const userAnswers = [
         document.getElementById('q1').value.trim().toLowerCase(),
         document.getElementById('q2').value.trim().toLowerCase(),
@@ -150,93 +150,8 @@
       let correct = userAnswers.every((ans, i) => ans === answers[i]);
       const result = document.getElementById('quiz-result');
       result.innerHTML = correct ?
-        '<p>🔥 You know your Jibi well! Claim your massage & naughty cuddle tonight 😘</p>' :
+        '<p>🔥 You know your Jibi well! Claim your massage & naughty cuddle tonight 😘</p><p>🎉 Dare Unlocked: Give Jibi a sexy dance hahaha 💃</p>' :
         '<p>Oops! One or more answers need another Duduy session to review 😯</p>';
     }
   </script>
 </head>
-<body>
-  <header>
-    <h1>Jibi ❤️ Natnat</h1>
-    <p>20 Months. 613 Days. A love that's soft, strong, and a little bit naughty. 😘</p>
-  </header>
-
-  <section class="poster">
-    <h2>"To make you feel my love…"</h2>
-    <p>Inspired by Adele | Celebrating our 20th Monthsary – July 5, 2025</p>
-  </section>
-
-  <div class="audio-player">
-    <p>💌 Click to play the song that says it all:</p>
-    <button class="love-note-button" onclick="playLoveSong()">Play Our Love Song 🎶</button>
-    <p class="quote-line">“Ikaw ang aking palagi at pahinga.”</p>
-    <audio id="loveAudio">
-      <source src="theme-song.mp3" type="audio/mp3">
-      Your browser does not support the audio element.
-    </audio>
-  </div>
-
-  <section class="timeline">
-    <h3>🧶 Love Timeline</h3>
-    <ul>
-      <li><strong>Nov 1, 2023:</strong> Jibi said YES! Haha The first Duduy Date. 💌</li>
-      <li><strong>Every day since:</strong> She sent me her love (and her *ahem*, heart) – without fail. 📸😉</li>
-      <li><strong>Nov 5, 2024:</strong> Our official anniversary (All Saints Day no more haha)</li>
-      <li><strong>July 5, 2025:</strong> Our 20th monthsary. And we're just getting started.</li>
-    </ul>
-  </section>
-
-  <section class="streak">
-    <h3>🔥 Daily Devotion</h3>
-    <p>Every single day, Natnat gave me a glimpse of her light, her laugh, her *curls*, and just enough cleavage to keep my blood pressure unstable.</p>
-    <p>That’s not just love. That’s commitment with spice. 🌶️</p>
-  </section>
-
-  <section class="declaration">
-    <h3>🦋 To My Sunflower Queen</h3>
-    <p>You with the curly hair, the gentle soul, the red-stained lips, and that butterfly laugh—
-    you’ve crocheted yourself into every part of me.
-    Your voice calms me. Your boobs distract me. And your love anchors me.</p>
-    <p>From your Jibi: the tall, silent, clingy dentist-businessman who lives for every Duduy Day with you.</p>
-  </section>
-
-  <section class="gallery">
-    <h3>📸 Gallery of Duduy Memories</h3>
-    <p>A little collection of our love in frames – from sweet selfies to your crochet masterpieces and our favorite illustrations 💛</p>
-    <div class="gallery-images">
-      <img src="Pahinga.png" alt="My Pahinga">
-      <img src="20th.png" alt="20th">
-      <img src="fath.jpg" alt="fath">
-      <img src="sleep.jpg" alt="sleep">
-      <img src="lasheng.jpg" alt="di ako lasheng">
-      <img src="front.jpg" alt="front not side">
-    </div>
-  </section>
-
-  <section class="quiz">
-    <h3>💖 How Well Do You Know Jibi?</h3>
-    <p>Answer all 3 and prove your Duduy expertise. Get them right and unlock a surprise 😘</p>
-    <ol>
-      <li>
-        What’s my favorite body part of Natnat?<br>
-        <input type="text" id="q1">
-      </li>
-      <li>
-        What did I say when you sent your first boobpic?<br>
-        <input type="text" id="q2">
-      </li>
-      <li>
-        What color underwear do I imagine on you?<br>
-        <input type="text" id="q3">
-      </li>
-    </ol>
-    <button onclick="checkQuiz()">Check My Answers 💋</button>
-    <div id="quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
-  </section>
-
-  <footer>
-    <div class="butterfly">🦋</div>
-    <p>Forever yours, Natnat. – Jibi</p>
-  </footer>
-</body>
-</html>
