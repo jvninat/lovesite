@@ -46,12 +46,12 @@
     .poster h2 {
       font-size: 2.5em;
     }
-    .timeline, .streak, .declaration, .gallery {
+    .timeline, .streak, .declaration, .gallery, .quiz {
       padding: 40px 20px;
       max-width: 800px;
       margin: auto;
     }
-    .timeline h3, .streak h3, .declaration h3, .gallery h3 {
+    .timeline h3, .streak h3, .declaration h3, .gallery h3, .quiz h3 {
       color: #c62828;
     }
     .gallery-images {
@@ -110,6 +110,25 @@
     .audio-player audio {
       display: none;
     }
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin: 5px 0 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #e91e63;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 25px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #c2185b;
+    }
     @keyframes flutter {
       0% { transform: translateY(0); }
       50% { transform: translateY(-10px); }
@@ -120,6 +139,19 @@
     function playLoveSong() {
       const audio = document.getElementById('loveAudio');
       audio.play();
+    }
+    function checkQuiz() {
+      const answers = ['boobs', 'hotdamn', 'red'];
+      const userAnswers = [
+        document.getElementById('q1').value.trim().toLowerCase(),
+        document.getElementById('q2').value.trim().toLowerCase(),
+        document.getElementById('q3').value.trim().toLowerCase()
+      ];
+      let correct = userAnswers.every((ans, i) => ans === answers[i]);
+      const result = document.getElementById('quiz-result');
+      result.innerHTML = correct ?
+        '<p>🔥 You know your Jibi well! Claim your massage & naughty cuddle tonight 😘</p>' :
+        '<p>Oops! One or more answers need another Duduy session to review 😯</p>';
     }
   </script>
 </head>
@@ -178,8 +210,28 @@
       <img src="sleep.jpg" alt="sleep">
       <img src="lasheng.jpg" alt="di ako lasheng">
       <img src="front.jpg" alt="front not side">
-      
     </div>
+  </section>
+
+  <section class="quiz">
+    <h3>💖 How Well Do You Know Jibi?</h3>
+    <p>Answer all 3 and prove your Duduy expertise. Get them right and unlock a surprise 😘</p>
+    <ol>
+      <li>
+        What’s my favorite body part of Natnat?<br>
+        <input type="text" id="q1">
+      </li>
+      <li>
+        What did I say when you sent your first boobpic?<br>
+        <input type="text" id="q2">
+      </li>
+      <li>
+        What color underwear do I imagine on you?<br>
+        <input type="text" id="q3">
+      </li>
+    </ol>
+    <button onclick="checkQuiz()">Check My Answers 💋</button>
+    <div id="quiz-result" style="margin-top: 20px; font-weight: bold;"></div>
   </section>
 
   <footer>
